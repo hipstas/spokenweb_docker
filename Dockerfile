@@ -1,6 +1,6 @@
 ## PCDA Ubuntu Container
 FROM ubuntu:16.04
-MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
+MAINTAINER Liz Fischer <lfischer@utexas.edu>
 
 EXPOSE 8887
 ENV PYTHONWARNINGS="ignore:a true SSLContext object"
