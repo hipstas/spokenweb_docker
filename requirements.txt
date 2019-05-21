@@ -17,3 +17,5 @@ lda
 nltk
 scaper
 soundfile
+altair
+vega
