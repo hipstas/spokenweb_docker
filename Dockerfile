@@ -34,27 +34,24 @@ RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
 RUN apt-get update && apt-get install -y \
 python-dev \
 #python2.7 \
-python3 \
-python-pip \
-python3-pip \
+python3.6 \
 ipython \
 ipython-notebook \
 python-numpy-dev \
 python-matplotlib \
 #&& python -m pip install -U pip \
-&& python3 -m pip install -U pip
+&& python3.6 -m pip install -U pip
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-RUN pip install -qr /var/local/requirements.txt \
-&& pip3 install -qr /var/local/requirements.txt \
-&& pip3 install nltk \
-&& python3 -m nltk.downloader -d /usr/local/share/nltk_data all
+RUN python3.6 -m pip install -qr /var/local/requirements.txt \
+&& python3.6 -m pip install nltk \
+&& python3.6 -m nltk.downloader -d /usr/local/share/nltk_data all
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
-RUN python3 -m pip install jupyterhub notebook ipykernel \
-&& python3 -m ipykernel install #\
+RUN python3.6 -m pip install jupyterhub notebook ipykernel \
+&& python3.6 -m ipykernel install #\
 #&& python2 -m pip install ipykernel \
 #&& python2 -m ipykernel install
 
